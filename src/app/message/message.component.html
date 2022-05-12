@@ -1,0 +1,18 @@
+<div class="card-container">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' +getprofileUrl(message)+ ')'}">
+          </div>
+          <mat-card-title>{{message.author.name}}</mat-card-title>
+          <mat-card-subtitle>{{message.updated | date: 'dd-MM-yyyy'}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{message.content}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+</div>
+
+

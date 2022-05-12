@@ -1,0 +1,18 @@
+<!-- <div style="height: 95vh; overflow-y: scroll; background-color: rgb(238,238,238);"> -->
+    <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="getNewMessages()"
+    [scrollWindow]="false"  style="height: 95vh; overflow-y: scroll; background-color: rgb(238,238,238);">
+
+    <div *ngFor="let message of messages" >
+        <div cdkDragLockAxis="x" cdkDrag (cdkDragEnded)="dragEnd($event, message.id)">
+            <message-card [message]="message" [baseUrl]="baseUrl"></message-card>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div cdkDropList
+[cdkDropListData]="messages"
+(cdkDropListDropped)="drop($event)">
+</div> -->
+<!-- </div> -->
+
