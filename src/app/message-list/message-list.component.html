@@ -3,7 +3,7 @@
     [scrollWindow]="false"  style="height: 95vh; overflow-y: scroll; background-color: rgb(238,238,238);">
 
     <div *ngFor="let message of messages" >
-        <div cdkDragLockAxis="x" cdkDrag (cdkDragEnded)="dragEnd($event, message.id)">
+        <div cdkDragLockAxis="x" cdkDrag (cdkDragEnded)="dragEnd($event, message.id)" [cdkDragStartDelay]="50">
             <message-card [message]="message" [baseUrl]="baseUrl"></message-card>
         </div>
     </div>
